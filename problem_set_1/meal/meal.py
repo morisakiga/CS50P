@@ -16,7 +16,7 @@ instance, given a time like "7:30" (i.e., 7 hours and 30 minutes), convert shoul
 """
 
 def main():
-    time = input("What time is it? ")
+    time = input("What time is it? ").strip("amp. ")
     time = convert(time)
 
     if 7 <= time <= 8:
@@ -31,7 +31,7 @@ def convert(time):
     converted_time = time.split(sep=":")
     time = float(converted_time[0]) + float(converted_time[1]) / 60
     return time
-    # TODO: add support for a.m. and p.m.
+    # TODO: add support for 12-hour times
 
 
 if __name__ == "__main__":
